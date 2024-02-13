@@ -2,7 +2,7 @@ import { useState } from "react";
 import PopupWithForm from "./PopupWithForm";
 import Header from "./Header"
 import Main from "./Main"
-
+import ImagePopup from "./ImagePopup"
 import Footer from "./Footer"
 
 function App() {
@@ -71,7 +71,7 @@ function App() {
           <span class="popup__form" id="span-input-add-image"></span>
         </label>
     </PopupWithForm>
-    {/* <ImagePopup card={selectedCard} onClose={closeAllPopups} /> */}
+    <ImagePopup card={selectedCard} onClose={closeAllPopups} />
     <Footer />
     </>
   );
