@@ -40,15 +40,15 @@ function Main({ onEditProfileClick, onAddPlaceClick, onEditAvatarClick, onCardCl
     <>
       <section className="profile">
         <div className="profile__container">
-          <img  src={imgprofile} onClick={onEditAvatarClick} className="profile__image" alt="profile picture"/>
+          <img  src={userAvatar} onClick={onEditAvatarClick} className="profile__image" alt="profile picture"/>
           <div className="profile__titles">
             <div className="profile__content">
-              <h1 className="profile__title">Jacques Cousteau</h1>
+              <h1 className="profile__title">{userName}</h1>
               <button onClick={onEditProfileClick} className="profile__button opacursor abrir">
                 <img src={edtImage}  className="edit" alt="icone de um lapiz"/>
               </button>
             </div>
-            <h2 className="profile__subtitle">Explorar</h2>
+            <h2 className="profile__subtitle">{userDescription}</h2>
           </div>
         </div>
         <button onClick={onAddPlaceClick} className="button profile__button-add opacursor abrir">

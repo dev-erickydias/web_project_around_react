@@ -6,7 +6,7 @@ function ImagePopup({ card, onClose }) {
       <div className="overlay" id="overlay-image"></div>
       <div className="popup-container">
         <div className="popup__image">
-          <img className="popup-container__image popup-container__image_card" id="popup-image" src={card ? card.link : ''} alt={card ? card.name : ''} />
+          <img className="popup-container__image popup-container__image_card" id="popup-image" src={card?.link} alt={card?.name} />
           <span className="popup__container-name">{card ? card.name : ''}</span>
         </div>
         <div className="close-image">
