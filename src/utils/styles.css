@@ -1,11 +1,3 @@
-
-
-/* ==================================== import do estilo de fontes ========================================= */
-
-
-
-
-
 /* ==================================== import do estilo dos popup ========================================= */
 @import url(../blocks/popups/popup.css);
 @import url(../blocks/popups/__opened/opened.css);

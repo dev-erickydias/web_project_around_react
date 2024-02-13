@@ -23,7 +23,7 @@ function Main({ onEditProfileClick, onAddPlaceClick, onEditAvatarClick, onCardCl
         setUserAvatar(userInfo.avatar);
       })
       .catch((error) => {
-        console.error("Erro ao buscar dados do usuário:", error);
+        console.error("Error Of Get User", error);
       });
 
     api
@@ -32,7 +32,7 @@ function Main({ onEditProfileClick, onAddPlaceClick, onEditAvatarClick, onCardCl
         setCards(initialCards);
       })
       .catch((error) => {
-        console.error("Erro ao buscar dados dos cartões:", error);
+        console.error("Erro Of Get Info Cards", error);
       });
   }, []);
 
