@@ -11,10 +11,15 @@
 }
 
 
-
-
-
-
+.profile_edit__conetener{
+  display: flex;
+  border-radius: 50%;
+  position: relative;
+  background-image: url(../../image/Lapiz__icon.png);
+  background-size: 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 @media (max-width: 768px) {
   .profile {
