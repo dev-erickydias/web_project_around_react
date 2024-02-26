@@ -1,60 +1,37 @@
-import { useState, useEffect } from "react";
-import { api } from "../utils/api.js";
+import { useContext } from "react";
 import Card from "./Card.js";
 import edtImage from "../image/Lapiz__icon.png";
 import addImage from "../image/add__icon.png";
+import { UserContext } from "../contexs/CurrentUserContext.js";
+
 
 function Main({
+  cards,
+  onEditAvatarClick,
   onEditProfileClick,
   onAddPlaceClick,
-  onEditAvatarClick,
   onCardClick,
+  onCardLike,
+  onCardDelete,
 }) {
-  const [userName, setUserName] = useState("");
-  const [userDescription, setUserDescription] = useState("");
-  const [userAvatar, setUserAvatar] = useState("");
-  const [cards, setCards] = useState([]);
-
-  useEffect(() => {
-    api
-      .getUserInfo()
-      .then((userInfo) => {
-        setUserName(userInfo.name);
-        setUserDescription(userInfo.about);
-        setUserAvatar(userInfo.avatar);
-      })
-      .catch((error) => {
-        console.error("Error Of Get User", error);
-      });
-  }, []);
-  useEffect(() => {
-    api
-      .getInitialCards()
-      .then((initialCards) => {
-        setCards(initialCards);
-      })
-      .catch((error) => {
-        console.error("Erro Of Get Info Cards", error);
-      });
-  }, []);
-
+  const currentUser = useContext(UserContext);
   return (
     <>
       <section className="profile">
         <div className="profile__container">
           <div className="profile_edit__conetener">
           <img
-            src={userAvatar}
+            src={currentUser.avatar}
             onClick={onEditAvatarClick}
             className="profile__image opacursor"
-            alt="profile picture"
+            alt="profile"
           />
           </div>
           
           
           <div className="profile__titles">
             <div className="profile__content">
-              <h1 className="profile__title">{userName}</h1>
+              <h1 className="profile__title">{currentUser.name}</h1>
               <button onClick={onEditProfileClick} className="profile__button opacursor abrir">
                 <img
                   src={edtImage}
@@ -63,7 +40,7 @@ function Main({
                 />
               </button>
             </div>
-            <h2 className="profile__subtitle">{userDescription}</h2>
+            <h2 className="profile__subtitle">{currentUser.about}</h2>
           </div>
         </div>
         <button
@@ -79,7 +56,7 @@ function Main({
       </section>
       <ul className="cards">
         {cards.map((card) => (
-          <Card cardData={card} key={card._id} onCardClick={onCardClick} />
+          <Card cardData={card} key={card._id} onCardClick={onCardClick} onCardLike={onCardLike} onCardDelete={onCardDelete}/>
         ))}
       </ul>
       <section className="popup popup_delete">
@@ -88,7 +65,7 @@ function Main({
             <img
               className="popup__close-icon-img"
               src="./images/close-icon.png"
-              alt="ìcone para fechar o pop-up"
+              alt="fechar o pop-up"
             />
           </button>
           <h2 className="popup__title">Tem certeza?</h2>

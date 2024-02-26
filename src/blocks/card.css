@@ -6,13 +6,17 @@
   position: relative;
 }
 .del {
+  display: none;
+}
+.del__hidden{
   position: absolute;
   top: 18px;
   right: 15px;
   width: 18px;
   height: 19.3px;
+  opacity: 1;
 }
-.card__image {
+.card__images {
   min-width: 282px;
   min-height: 282px;
   max-width: 282px;
@@ -53,17 +57,30 @@
   text-align: left;
   margin: 10px 0 0;
 }
-.card__unlick {
+.card__unlike {
+  border: none;
   width: 21px;
   height: 19px;
   position: absolute;
   bottom: 25px;
   right: 15px;
+  background-image: url(../image/unlike.png);
 }
-.card__unlick:hover {
+.card__unlike:hover {
   cursor: pointer;
 }
-
+.card__like {
+  background-image: url(../image/liked.png);
+}
+.elements__like-count {
+  position: absolute;
+  bottom: 5px;
+  right: 22px;
+  color: black;
+  font-size: 13px;
+  font-family: Inter;
+  font-weight: 400;
+}
 @media (max-width: 768px) {
   .card {
     margin: 0 35px 0 0;

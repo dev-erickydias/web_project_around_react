@@ -1,4 +1,3 @@
-import "../blocks/header.css"
 import logo from "../image/Vector.svg"
 
 

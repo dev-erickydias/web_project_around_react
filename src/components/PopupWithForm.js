@@ -1,10 +1,10 @@
 import close from "../image/Close__Icon.png"
 
-function PopupWithForm({ title, name, children, isOpen, onClose }) {
+function PopupWithForm({ title, name, children, isOpen, onClose, onSubmit }) {
   return (
     <div className={`popup ${name} ${isOpen ? "popup_opened" : ""}`} id="popup-card-form">
       <div className="overlay" id="overlay-add"></div>
-      <form id="first">
+      <form id="first" onSubmit={onSubmit}>
         <div className="popup__form-itens" id="form__itens">
           <div className="popup__form-close" id="close-add">
             <img src={close} alt="Botão que feixa a caixa de edição" onClick={onClose}/>

@@ -1,15 +1,30 @@
-import "../blocks/card.css"
+import { useContext } from "react";
+import { UserContext } from "../contexs/CurrentUserContext.js";
 import close from "../image/lixeira.png"
-import unlick from "../image/unlike.png"
-function Card ({cardData, onCardClick}) {
-  const {link, name} = cardData
-  const handleClick =()=>onCardClick(cardData)
+function Card({ cardData, onCardClick, onCardDelete, onCardLike }) {
+  const currentUser = useContext(UserContext);
+  const { link, name, owner, likes } = cardData;
+
+  const isOwn = owner._id === currentUser._id;
+
+
+  const cardDeleteButtonClassName = `opacursor ${
+    !isOwn ? "del" : "del__hidden"
+  }`;
+
+  const isLiked = likes.some((like) => like._id === currentUser._id);
+  const cardLikeButtonClassName = `card__unlike opacursor ${
+    isLiked ? "card__like" : ""
+  }`;
+
+  console.log(likes)
   return (
     <li className="card">
-      <img className="del opacursor" src={close} alt="icone de lixeira" />
-      <img className="card__image" src={link}  onClick={handleClick} alt={name}/>
+      <img className={cardDeleteButtonClassName} src={close} alt="icone de lixeira" onClick={() => onCardDelete(cardData)}/>
+      <img className="card__images" src={link}  onClick={()=>onCardClick(cardData)} alt={name}/>
       <h2 className="card__title">{name}</h2>   
-        <img className="card__unlick unlike" src={unlick} data-liked="false"  alt="like" />
+        <button className={cardLikeButtonClassName} onClick={() => onCardLike(cardData)} data-liked="false"  alt="like" />
+        <span className="elements__like-count">{likes.length}</span>
     </li>
   )
 }
