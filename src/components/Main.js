@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Card from "./Card.js";
 import edtImage from "../image/Lapiz__icon.png";
 import addImage from "../image/add__icon.png";
-import { UserContext } from "../contexs/CurrentUserContext.js";
+import { UserContext } from "../contexts/CurrentUserContext.js";
 
 
 function Main({

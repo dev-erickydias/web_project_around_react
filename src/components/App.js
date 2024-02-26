@@ -5,7 +5,7 @@ import Main from "./Main";
 import ImagePopup from "./ImagePopup";
 import Footer from "./Footer";
 import { api } from "../utils/api.js";
-import { UserContext } from "../contexs/CurrentUserContext.js";
+import { UserContext } from "../contexts/CurrentUserContext.js";
 import AddPlacePopup from "./AddPlacePopup";
 import EditProfilePopup from "./EditProfilePopup.js";
 
