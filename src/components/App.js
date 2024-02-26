@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import EditAvatarPopup from "./EditAvatarPupup.js"
+import EditAvatarPopup from "./EditAvatarPopup.js"
 import Header from "./Header";
 import Main from "./Main";
 import ImagePopup from "./ImagePopup";
