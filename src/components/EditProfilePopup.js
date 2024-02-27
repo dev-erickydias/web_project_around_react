@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import PopupWithForm from "./PopupWithForm";
-import { UserContext } from "../contexts/CurrentUserContext";
+import { currentUserContext } from "../contexts/CurrentUserContext";
 
 function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
-  const currentUser = useContext(UserContext);
+  const currentUser = useContext(currentUserContext);
   const [name, setName] = useState("");
   const [about, setAbout] = useState("");
 
@@ -40,7 +40,6 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
             id="nome"
             className="popup__form-input popup__form-name"
             onChange={(event) => {
-              console.log(event);
               setName(event.target.value);
             }}
           />
@@ -58,7 +57,6 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
             minLength="2"
             maxLength="200"
             onChange={(event) => {
-              console.log(event.target.value);
               setAbout(event.target.value);
             }}
           />

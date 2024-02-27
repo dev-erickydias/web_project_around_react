@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Card from "./Card.js";
 import edtImage from "../image/Lapiz__icon.png";
 import addImage from "../image/add__icon.png";
-import { UserContext } from "../contexts/CurrentUserContext.js";
+import { currentUserContext } from "../contexts/CurrentUserContext.js";
 
 
 function Main({
@@ -14,7 +14,7 @@ function Main({
   onCardLike,
   onCardDelete,
 }) {
-  const currentUser = useContext(UserContext);
+  const currentUser = useContext(currentUserContext);
   return (
     <>
       <section className="profile">

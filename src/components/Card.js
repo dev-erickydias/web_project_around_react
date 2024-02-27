@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { UserContext } from "../contexts/CurrentUserContext.js";
+import { currentUserContext } from "../contexts/CurrentUserContext";
 import close from "../image/lixeira.png"
 function Card({ cardData, onCardClick, onCardDelete, onCardLike }) {
-  const currentUser = useContext(UserContext);
+  const currentUser = useContext(currentUserContext);
   const { link, name, owner, likes } = cardData;
 
   const isOwn = owner._id === currentUser._id;
@@ -17,7 +17,6 @@ function Card({ cardData, onCardClick, onCardDelete, onCardLike }) {
     isLiked ? "card__like" : ""
   }`;
 
-  console.log(likes)
   return (
     <li className="card">
       <img className={cardDeleteButtonClassName} src={close} alt="icone de lixeira" onClick={() => onCardDelete(cardData)}/>

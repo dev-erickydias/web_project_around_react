@@ -5,7 +5,7 @@ import Main from "./Main";
 import ImagePopup from "./ImagePopup";
 import Footer from "./Footer";
 import { api } from "../utils/api.js";
-import { UserContext } from "../contexts/CurrentUserContext.js";
+import { currentUserContext } from "../contexts/CurrentUserContext.js";
 import AddPlacePopup from "./AddPlacePopup";
 import EditProfilePopup from "./EditProfilePopup.js";
 
@@ -92,7 +92,7 @@ function App() {
 
   return (
     <>
-      <UserContext.Provider value={currentUser}>
+      <currentUserContext.Provider value={currentUser}>
         <Header />
         <Main
           cards={cards}
@@ -129,7 +129,7 @@ function App() {
 
         <ImagePopup card={selectedCard} onClose={closeAllPopups} />
         <Footer />
-      </UserContext.Provider>
+      </currentUserContext.Provider>
     </>
   );
 }
