@@ -117,10 +117,11 @@ class Api {
     return this.removeLikes(cardId);
   }
 }
-export const api = new Api({
+const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/web_ptbr_08",
   headers: {
     authorization: "0c0f253c-4ca4-4bd1-943e-23d7fcba2ec6",
     "Content-Type": "application/json"
   }
 });
+export default api
