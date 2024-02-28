@@ -1,7 +1,6 @@
 /* ==================================== import do estilo dos popup ========================================= */
 @import url(../blocks/popups/popup.css);
 @import url(../blocks/popups/__opened/opened.css);
-@import url(../blocks/popups/__container/container.css);
 
 
 /* ==================================== import do estilo dos formularios ========================================= */

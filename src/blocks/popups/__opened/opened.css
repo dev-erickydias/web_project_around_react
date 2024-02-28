@@ -3,8 +3,8 @@
   z-index: 999;
   visibility: visible;
 }
-.popup_opened .popup-container__image_card {
-  width: 433px;
+.Popup__Image {
+  width: 500px;
   height: 540px;
   max-height: 75vh;
   max-width: 75vw;

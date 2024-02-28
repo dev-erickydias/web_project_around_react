@@ -1,8 +1,27 @@
 .close-image {
-    width: 39px;
-    height: 39px;
-    position: absolute;
-    top: 55px;
-    right: 350px;
-    cursor: pointer;
+  display: flex;
+  align-self: end;
+  margin-left: 30px;
+
+}
+.popup__image{
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+}
+.popup-container{
+  max-width: 816px;
+}
+.popup-container__image_card{
+  max-width: 816px;
+  max-height: 540px;
+}
+@media (max-width: 768px) {
+  .popup-container{
+    width: 440px;
   }
+  .popup-container__image_card{
+    max-width: 400px;
+    max-height: 400px;
+  }
+}
